@@ -1,1 +1,18 @@
-"# Aquilon" 
+Technologies:
+  Visual Studio 2017
+  .NET 4.7
+  TypeScript 2.7
+  Angularjs 1.6
+  Node 9.7.1
+  NPM 5.7.1
+  WebPack for module loading. Distribution files and node_modules are included in repo otherwise have to build from command line:
+  'npm run build'
+  Sql Server 2016
+  
+  Stored procedure is in Adventurworks project dbo folder and is named uspSalesOrderSearch.
+  
+  Caveats:
+  Need Identity server for login
+  WebApi needs LoggingFilter and ExceptionFilter
+  Need instrumentation for client side. Currently using alert and console. Application insights would be preferable.
+  Tested app with OrderDate = '2014-06-30', CustomerName = 'Van', DateType = 'order'. Need futher testing with other date type (ship, due)
