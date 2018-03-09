@@ -1,0 +1,58 @@
+﻿<table class="table" details="$ctrl.selectedOrder.ProductInfo">
+    <thead>
+        <tr>
+            <th>Actions</th>
+            <th>Customer Name</th>
+            <th>Account Number</th>
+            <th>Ship To Address</th>
+            <th>Ship Method</th>
+            <th>SubTotal</th>
+            <th>Tax</th>
+            <th>Freight</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr ng-repeat-start="order in $ctrl.orders" ng-init="$ctrl.orderindex = $index">
+            <td>                
+                <button type="button" class="btn btn-link" ng-if="!order.expanded" ng-click="order.expanded = true"><i class="fa fa-plus-circle"></i></button>
+                <button type="button" class="btn btn-link" ng-if="order.expanded" ng-click="order.expanded = false"><i class="fa fa-minus-circle"></i></button>
+            </td>
+            <td>{{ order.FirstName + ' ' + order.MiddleName + ' ' + order.LastName }}</td>
+            <td>{{ order.AccountNumber }}</td>
+            <td>{{ order.AddressLine1 + '\n' + order.AddressLine2 + '\n' + order.City + ',' + ' ' + order.StateProvinceCode + ' ' + order.PostalCode}}</td>
+            <td>{{ order.ShipMethod }}</td>
+            <td>{{ order.SubTotal | currency: "$" : 2 }}</td>
+            <td>{{ order.TaxAmt | currency: "$" : 2}}</td>
+            <td>{{ order.Freight | currency: "$" : 2}}</td>
+            <td>{{ order.TotalDue | currency: "$" : 2}}</td>
+        </tr>
+        <tr ng-if="order.expanded" ng-repeat-end>
+            <td></td>
+            <td colspan="9">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Number</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Discount</th>
+                            <th>Line Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="info in order.Products" ng-init="$ctrl.infoindex = $index">
+                            <td>{{ info.ProductName }}</td>
+                            <td>{{ info.ProductNumber }}</td>
+                            <td>{{ info.OrderQty }}</td>
+                            <td>{{ info.UnitPrice | currency: "$" : 2 }}</td>
+                            <td>{{ info.UnitPriceDiscount | currency: "$" : 2 }}</td>
+                            <td>{{ info.LineTotal | currency: "$" : 2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

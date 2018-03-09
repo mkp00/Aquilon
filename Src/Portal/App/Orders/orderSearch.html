@@ -1,0 +1,24 @@
+﻿<form name="orderSearchForm">
+    <div class="form-group" ng-class="{'has-error': orderSearchForm.customername.$invalid && (orderSearchForm.customername.$dirty || orderSearchForm.$submitted)}">
+        <label for="customername">Customer Name</label>
+        <input type="text" class="form-control" id="customername" name="customername" placeholder="Enter customer name..." ng-model="$ctrl.customername" required ng-maxlength="128">
+        <p ng-show="orderSearchForm.customername.$error.required && (orderSearchForm.customername.$dirty || orderSearchForm.$submitted)" class="help-block">Required field.</p>
+    </div>
+    <div class="form-group">
+        <label for="datetype">Date Type</label>
+        <select name="datetype" id="datetype" class="form-control" ng-model="$ctrl.datetype" required>
+            <option value="order">Order Date</option>
+            <option value="due">Due Date</option>
+            <option value="ship">Ship Date</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selecteddate">From Date</label>
+        <input type="text" class="form-control" id="selecteddate" name="selecteddate" ng-model="$ctrl.selecteddate" required placeholder="Date required..." readonly>
+    </div>
+    <div class="form-group">
+        <div class="wrap-ui-datepicker" id="date" name="date" uib-datepicker ng-change="$ctrl.onDateChange()" ng-model="$ctrl.date" datepicker-options="{showWeeks: false}" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" ng-disabled="orderSearchForm.$invalid" ng-click="$ctrl.submitClicked()">Submit</button>
+</form>

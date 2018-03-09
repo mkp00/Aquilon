@@ -1,0 +1,15 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>{{$ctrl.pagetitle}}</h2>
+        <button type="button" class="btn btn-link" ng-click="$ctrl.onLogoutClick()">Logout</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-2">
+        <order-search on-submit="$ctrl.getOrders(orderSearchData)"></order-search>
+    </div>
+    <div class="col-md-10">
+        <div><order-list orders="$ctrl.orders"></order-list></div>
+    </div>
+</div>

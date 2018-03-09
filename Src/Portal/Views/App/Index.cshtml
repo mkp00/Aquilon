@@ -1,0 +1,19 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus AdventureWorks</title>
+    <meta name="description" content="Test Application" />
+    <base href="/" />
+    <link rel="icon" href="~/Content/Images/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel="stylesheet" type="text/css">
+    @Styles.Render("~/App/dist")
+</head>
+    <body>
+        <app></app>
+        @Scripts.Render("~/bundles/scripts")
+    </body>
+</html>
