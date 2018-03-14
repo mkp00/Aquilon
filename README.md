@@ -1,13 +1,14 @@
 Technologies:
-  Visual Studio 2017
-  .NET 4.7
-  TypeScript 2.7
-  Angularjs 1.6
-  Node 9.7.1
-  NPM 5.7.1
+  Visual Studio 2017,
+  .NET 4.7,
+  TypeScript 2.7,
+  Angularjs 1.6,
+  Node 9.7.1,
+  NPM 5.7.1,
+  Sql Server 2016,
+  
   WebPack for module loading. Distribution files and node_modules are included in repo otherwise have to build from command line:
-  'npm run build'
-  Sql Server 2016
+  'npm run build' 
   
   Stored procedure is in Adventurworks project, /dbo/Stored Procedures/ folder and is named uspSalesOrderSearch.
   
