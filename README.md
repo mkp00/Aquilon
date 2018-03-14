@@ -9,7 +9,7 @@ Technologies:
   'npm run build'
   Sql Server 2016
   
-  Stored procedure is in Adventurworks project dbo folder and is named uspSalesOrderSearch.
+  Stored procedure is in Adventurworks project, /dbo/Stored Procedures/ folder and is named uspSalesOrderSearch.
   
   Caveats:
   Need Identity server for login
